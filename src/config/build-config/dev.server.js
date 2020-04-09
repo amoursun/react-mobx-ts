@@ -1,0 +1,1 @@
+require('./config.dev.server')({})

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>circle-text</title>
+  <style>
+
+    .circle-text {
+      margin: 100px;
+      width: 192px;
+      height: 96px;
+      background-color: #eee;
+      border-color: #333;
+      border-style: solid;
+      border-width: 4px 4px 100px 4px;
+      border-radius: 100%;
+      position: relative;
+      -webkit-animation: circleReverse 32s infinite linear; /*无限旋转*/
+    }
+
+    .circle-text:before {
+      content: "";
+      width: 24px;
+      height: 24px;
+      border: 36px solid #333;
+      background-color: #eee;
+      border-radius: 100%;
+      position: absolute;
+      top: 50%;
+      left: 0;
+    }
+
+    .circle-text:after {
+      content: "";
+      width: 24px;
+      height: 24px;
+      border: 36px solid #eee;
+      background-color: #333;
+      border-radius: 100%;
+      position: absolute;
+      top: 50%;
+      right: 0;
+    }
+
+    /*太极图 css--end*/
+
+    /*环形文字css--*/
+    .circular {
+      width: 232px;
+      height: 232px;
+      position: absolute;
+      left: -20px;
+      top: -20px;
+      font-size: 11px;
+      font-family: "microsoft yahei";
+      color: #333;
+      -webkit-animation: circle 16s infinite linear; /*无限旋转*/
+    }
+
+    .circular path {
+      fill: none;
+    }
+
+    .circular svg {
+      display: block;
+      overflow: visible;
+    }
+
+    /*环形文字css--end*/
+
+    /*旋转动画css--animation*/
+    @-webkit-keyframes circle { /*其父元素逆向旋转所以首先要抵消掉旋转的360度*/
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(-720deg);
+      }
+    }
+
+    @-webkit-keyframes circleReverse {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="circle-text">
+  <div class="circular">
+    以无法为有法&nbsp;&nbsp;&nbsp;&nbsp;以无限为有限&nbsp;&nbsp;&nbsp;&nbsp;夫唯不争&nbsp;&nbsp;&nbsp;&nbsp;天下莫能与之争
+  </div>
+</div>
+</body>
+<script>
+  function $$(selector, context) {
+    context = context || document;
+    var elements = context.querySelectorAll(selector);
+    return Array.prototype.slice.call(elements);
+  }
+
+  $$('.circular').forEach(function (el) {
+    var NS = "http://www.w3.org/2000/svg";
+
+    var svg = document.createElementNS(NS, "svg");
+    svg.setAttribute("viewBox", "0 0 100 100");
+
+    var circle = document.createElementNS(NS, "path");
+    circle.setAttribute("d", "M0,50 a50,50 0 1,1 0,1z");
+    circle.setAttribute("id", "circle");
+
+    var text = document.createElementNS(NS, "text");
+    var textPath = document.createElementNS(NS, "textPath");
+    textPath.setAttributeNS("http://www.w3.org/1999/xlink", 'xlink:href', '#circle');
+    textPath.textContent = el.textContent;
+    text.appendChild(textPath);
+
+    svg.appendChild(circle);
+    svg.appendChild(text);
+
+    el.textContent = '';
+    el.appendChild(svg);
+  });
+</script>
+</html>

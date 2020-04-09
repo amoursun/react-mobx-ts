@@ -1,0 +1,18 @@
+{
+  "api1":{
+    "url":"/api1",
+    "path":"./api1/index.json"
+  },
+  "api2":{
+    "url": "/api2",
+    "path": "./api2/index.json"
+  },
+  "api3":{
+    "url": "/api3",
+    "path": "./api3/index.json"
+  },
+  "api4":{
+    "url": "/area",
+    "path": "./area/index.json"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "_from": "react-component-maker",
+  "_id": "react-component-maker@1.5.0",
+  "_inBundle": false,
+  "_integrity": "sha1-gO69ruogOC7xp10AlhMfn20yH4I=",
+  "_location": "/react-component-maker",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "react-component-maker",
+    "name": "react-component-maker",
+    "escapedName": "react-component-maker",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npm.taobao.org/react-component-maker/download/react-component-maker-1.5.0.tgz",
+  "_shasum": "80eebdaeea20382ef1a75d0096131f9f6d321f82",
+  "_spec": "react-component-maker",
+  "_where": "/Users/ganyanlin/Desktop/github/webpack",
+  "author": {
+    "name": "sunOpar"
+  },
+  "bin": {
+    "mkreact": "./bin/mkreact.js"
+  },
+  "bugs": {
+    "url": "https://github.com/sunbrother/react-component-maker/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "commander": "^2.9.0"
+  },
+  "deprecated": false,
+  "description": "build react-component kit",
+  "homepage": "https://github.com/sunbrother/react-component-maker#readme",
+  "keywords": [
+    "react",
+    "node",
+    "npm",
+    "javascript"
+  ],
+  "license": "ISC",
+  "main": "./lib/index.js",
+  "name": "react-component-maker",
+  "preferGlobal": "true",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunbrother/react-component-maker.git"
+  },
+  "scripts": {
+    "push": "git add . && git commit -m 'page update' && git push -u origin master",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.5.0"
+}

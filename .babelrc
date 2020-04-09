@@ -1,0 +1,47 @@
+{
+  "env": {
+  },
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "node": "6",
+          "browsers": [
+            "last 2 versions"
+          ]
+        },
+        "loose": false,
+        "modules": false,
+        "useBuiltIns": true
+      }
+    ],
+    "es2015",
+    "stage-0",
+    "react"
+  ],
+  "plugins": [
+    "transform-decorators-legacy",
+    "transform-object-rest-spread",
+    "transform-class-properties",
+    [
+      "transform-runtime",
+      {
+        "polyfill": false,
+        "regenerator": true
+      }
+    ],
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "libraryDirectory": "es",
+        "style": true
+      }
+    ]
+  ],
+  "ignore": [
+    "*.test.js",
+    "**/__test__"
+  ]
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <!--<meta charset="utf-8"/>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="initial-scale=0.3333333, maximum-scale=0.3333333, minimum-scale=0.3333333, user-scalable=no">
+    <title>webpack-react</title>
+    <link rel="icon" type="image/x-icon" href="../extra/favicon.ico">
+    <!--IE Polyfill 如果不需要考虑 IE9，请删除-->
+    <!--[if lte IE 9]>
+    <script src="../extra/ie9-polyfill.js"></script>
+    <![endif]-->
+</head>
+<body class="">
+<div id="root" class="app module-${htmlWebpackPlugin.options.data.entryName}"></div>
+<script>
+    window.I18N_VERSION = '${htmlWebpackPlugin.options.data.TIME}';
+    window.COMPONENT_KEY = '${htmlWebpackPlugin.options.data.entryName}';
+    window.BUILD_TIME = '@{buildTime}@';
+    window.APP_CONTEXT = '@context@';
+    window.APP_SERVER_HOST_URL = '@app.server.host.url@';
+    window.ERP_URL = '@erp.url@';
+    window.IS_DEV = false;
+</script>
+
+</body>
+</html>

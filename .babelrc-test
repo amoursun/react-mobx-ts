@@ -1,0 +1,50 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "node": "6",
+          "browsers": [
+            "last 2 versions"
+          ]
+        },
+        "loose": false,
+        "modules": false,
+        "useBuiltIns": true
+      }
+    ],
+    "es2015",
+    "stage-0",
+    "react"
+  ],
+  "env": {
+    "dev": {
+      "plugins": [
+        "transform-decorators-legacy",
+        "transform-object-rest-spread",
+        "transform-class-properties",
+        [
+          "transform-runtime",
+          {
+            "polyfill": false
+          }
+        ],
+        "react-hot-loader/babel"
+      ]
+    },
+    "prod": {
+      "plugins": [
+        "transform-decorators-legacy",
+        "transform-object-rest-spread",
+        "transform-class-properties",
+        [
+          "transform-runtime",
+          {
+            "polyfill": false
+          }
+        ]
+      ]
+    }
+  }
+}
